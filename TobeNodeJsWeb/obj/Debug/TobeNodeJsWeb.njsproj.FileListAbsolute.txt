@@ -1,0 +1,1 @@
+c:\users\ooluro\documents\visual studio 2013\Projects\TobeNodeJsWeb\TobeNodeJsWeb\obj\Debug\TobeNodeJsWeb.njsprojResolveAssemblyReference.cache

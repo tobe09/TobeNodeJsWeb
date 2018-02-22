@@ -1,0 +1,2 @@
+C:\Users\NeptuneDev1\Documents\Visual Studio 2013\Projects\Node\TobeNodeJsWeb\TobeNodeJsWeb\obj\Debug\TobeSchoolDemo.njsprojResolveAssemblyReference.cache
+C:\Users\NeptuneDev1\Documents\Visual Studio 2013\Projects\Node\TobeNodeJsWeb\TobeNodeJsWeb\bin\Microsoft.NodejsTools.WebRole.dll
