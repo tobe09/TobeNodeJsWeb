@@ -1,0 +1,36 @@
+﻿body {
+    width: 33%;
+}
+
+#res {
+    background-color: lightgray;
+    border: solid;
+    height: 48px;
+    font-size: 20px;
+}
+
+.buttonContainer {
+}
+
+.buttonsClass {
+    width: 25%;
+    height: 36px;
+    font-size: 18px;
+    margin: 0px;
+    float: left;
+}
+
+.numButtonsClass{
+    background-color: lightgreen;
+    color: brown;
+}
+
+.submitButtonsClass {
+    background-color: darkgreen;
+    color: white;
+}
+
+.actionButtonsClass {
+    background-color: black;
+    color: red;
+}

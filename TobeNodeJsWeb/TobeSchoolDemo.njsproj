@@ -35,6 +35,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Practise\BinaryCalculator.html" />
+    <Content Include="Practise\PractisePage.css" />
     <Content Include="View\StudentInfoPage.html" />
     <Content Include="View\Images\about\about1.jpg" />
     <Content Include="View\Images\about\about2.jpg" />
@@ -55,6 +57,7 @@
     <Folder Include="Model\" />
     <Folder Include="Controller\" />
     <Folder Include="Model\Scripts\" />
+    <Folder Include="Practise\" />
     <Folder Include="View\" />
     <Folder Include="View\Images\" />
     <Folder Include="View\Images\about\" />
@@ -78,6 +81,16 @@
     <Compile Include="Model\LevelModel.js" />
     <Compile Include="Model\Scripts\showDbEntry.js" />
     <Compile Include="Model\StudentModel.js" />
+    <Compile Include="Practise\Classes.js" />
+    <Compile Include="Practise\DSA.js" />
+    <Compile Include="Practise\HackerRank.js" />
+    <Compile Include="Practise\LexicalThis.js" />
+    <Compile Include="Practise\Oop.js" />
+    <Compile Include="Practise\PractisePage.js" />
+    <Compile Include="Practise\Promises.js" />
+    <Compile Include="Practise\Prototype.js" />
+    <Compile Include="Practise\Sorting.js" />
+    <Compile Include="Practise\Testing.js" />
     <Compile Include="View\Scripts\CommonScripts\animate.js" />
     <Compile Include="View\Scripts\CommonScripts\bootstrap.min.js" />
     <Compile Include="View\Scripts\CommonScripts\jquery.flexslider.js" />
