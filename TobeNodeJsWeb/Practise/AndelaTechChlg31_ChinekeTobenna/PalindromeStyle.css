@@ -1,0 +1,232 @@
+﻿html, body {
+    width: 100%;
+    background-color:antiquewhite;
+    /*background-image:url("index.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;*/
+}
+
+header{    
+    background-color: bisque;
+}
+
+header h1{    
+    line-height:1.1em;
+}
+
+.header-label{
+    color:blueviolet
+}
+
+.header-info{
+    color:cadetblue
+}
+
+.container {
+    background-color: white;
+    width: 100%;
+    min-height: 92vh;
+    font-size: 16px;
+    line-height: 1.3em;
+    padding: 20px;
+}
+
+.row{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.col{
+    width:100%;
+}
+
+.input-heading {
+    order:-2;
+    color: blue;
+    font-size: 20px;
+    margin-bottom:-10px;
+}
+
+.input-label {
+    order: -1;
+    width: 100%;
+}
+
+.examples{
+    margin-top:-20px;
+}
+
+.danger{
+    color:red;
+}
+
+.success{
+    color:green;
+}
+
+.bg-danger{
+  background-color:red;
+}
+
+.bg-success{
+   background-color:green;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.result-history{
+    margin-top:20px;
+}
+
+.result-shape {
+    width: 20px;
+    height:15px;
+    margin-right:20px;
+    padding-top:5px;
+}
+
+.result-info{
+    margin-bottom:15px;
+}
+
+.result-heading{
+    margin-bottom:-10px
+}
+
+.result-statement{
+    font-style:italic;
+}
+
+.res-statement-header{
+    font-style:normal;
+}
+
+.result-header{
+    display:none;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:10px;
+    text-decoration:underline
+}
+
+.example-margin{
+    margin-bottom:-15px;
+}
+
+.span-msg {
+    font-size: 19px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+button {
+    color: #fff;
+    background: chocolate;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom: 2px solid #006;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    height: 33px;
+    margin-left:0px;
+    margin-top:10px;
+    font-size:18px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+button:hover{
+    background-color:#4256cc;
+}
+
+#btnClear{
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
+
+input[type="text"]  
+{
+    width:80%;
+    height:25px;
+    font-size:16px;
+    background-color: #f2efb9;
+    margin-bottom: 0px;
+}
+
+@media screen and (min-width:500px){
+    .container{
+        font-size:17px;
+    }
+
+    .input-label{
+        order:0;
+        width:30%
+    }
+
+    .input-text{
+        width:70%
+    }
+
+    .result-value, .result-statement{
+        width:45%;
+    }
+
+    .col-sentences, .col-words{
+        width:50%;
+    }
+
+    button{
+        margin-top:20px;
+    }
+
+    .result-header {
+        display: flex;
+    }
+
+    .col-histDesc{
+        width:70%;
+    }
+
+    .col-btn-clear{
+        width:30%
+    }
+
+    .span-msg {
+        margin-bottom: 0px;
+        margin-top:0px;
+        margin-left: 30%;
+    }
+
+    #btnClear {
+        margin-bottom: 0px;
+        margin-top: 20px;
+    }
+}
+
+
+
+@media screen and (min-width:850px) {
+    .container{
+        width:800px;
+        margin-left:auto;
+        margin-right:auto;
+        font-size:18px;
+    }
+    .result-value, .result-statement{
+        width:40%;
+    }
+    .result-shape{
+        order:2;
+    }
+}
+
+
+.hidden{
+    display:none;
+}

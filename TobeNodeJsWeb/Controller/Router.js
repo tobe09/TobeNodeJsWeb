@@ -102,7 +102,7 @@ router.route("/Students")
     //validate student details before creating student
     if (isValidStudnt.isValid) {
         var student = new Students();                                   //student to be added
-        
+
         student.LastName = pascalCase(newStudent.LastName);
         student.FirstName = pascalCase(newStudent.FirstName);
         student.MiddleName = pascalCase(newStudent.MiddleName);
@@ -112,13 +112,13 @@ router.route("/Students")
         student.DateOfBirth = new Date(newStudent.Year, newStudent.Month - 1, newStudent.Day);
         student.PhoneNo = newStudent.PhoneNo;
         student.Email = newStudent.Email;
-        
+
         //start value of student matriculation number
-        var preMatricNo = "^" + deptPrefix(newStudent.Department, newStudent.Faculty) + (newStudent.Level / 100);      
-        
+        var preMatricNo = "^" + deptPrefix(newStudent.Department, newStudent.Faculty) + (newStudent.Level / 100);
+
         //get all students in the same department and level and generate unique matric number
         Students.find({ MatricNo: { $regex: preMatricNo } }, function (err, matchingStudents) {
-            
+
             if (err) {
                 logError(err);
                 res.json({ Error: errorMsg });
@@ -126,13 +126,13 @@ router.route("/Students")
             else {
                 preMatricNo = preMatricNo.substr(1, 4);                                 //to remove leading '^' sign
                 var matricNo = newMatricNo(preMatricNo, matchingStudents);              //new matriculation number generated
-                
+
                 //add student matriculation number to the new student object properties
                 student.MatricNo = matricNo;
-                
+
                 //save updated student
                 student.save(function (err, student) {
-                    
+
                     if (err) {
                         //already existing email error
                         if (typeof (err.errors.Email) == 'object') {
@@ -144,7 +144,23 @@ router.route("/Students")
                         }
                     }
                     else {
-                        res.json(student);                                              //return student
+                        debugger;
+                        //browser accepts responses or promises that resolve to responses
+                        new Promise((resolve, reject) => {
+                            resolve(true);
+                        }).then(val => {
+                            const a = val;
+                            let b = 4;
+                            return val;
+                        }).then(val => {
+                            return val;
+                        }).then(val => {
+                            if (val === true) {
+                                res.json(student);
+                                res.json({ Error: "Erroneous" });  //response is not recieved
+                            }
+                        });
+                        //res.json(student);                                              //return student
                     }
                 })
             }
@@ -316,7 +332,7 @@ router.route("/Students/:Id")
 
 
 
-//to send other files/data to the database
+//to send other files/data from the server
 router.get('*', function (req, res) {
     var relativeAddress = req.url;                                          //get address of file from request object
     res.sendFile(relativeAddress, { root: rootLocation });

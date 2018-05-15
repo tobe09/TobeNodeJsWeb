@@ -8,7 +8,9 @@ body {
     -moz-font-smoothing: antialiased;
     min-height: 100%;
 }
-
+.ss{
+    border : 3px 
+}
 #pageHeader {
     margin-left: 10px;
     position: fixed;

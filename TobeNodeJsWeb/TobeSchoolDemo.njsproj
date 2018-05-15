@@ -22,7 +22,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <ProjectView>ShowAllFiles</ProjectView>
-    <NodejsPort>1337</NodejsPort>
+    <NodejsPort>3000</NodejsPort>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
     <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
     <EnableTypeScript>true</EnableTypeScript>
@@ -35,6 +35,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Practise\AndelaTechChlg31_ChinekeTobenna\index.jpg" />
+    <Content Include="Practise\AndelaTechChlg31_ChinekeTobenna\PalindromePage.html" />
+    <Content Include="Practise\AndelaTechChlg31_ChinekeTobenna\PalindromeStyle.css" />
     <Content Include="Practise\BinaryCalculator.html" />
     <Content Include="Practise\PractisePage.css" />
     <Content Include="View\StudentInfoPage.html" />
@@ -58,6 +61,7 @@
     <Folder Include="Controller\" />
     <Folder Include="Model\Scripts\" />
     <Folder Include="Practise\" />
+    <Folder Include="Practise\AndelaTechChlg31_ChinekeTobenna\" />
     <Folder Include="View\" />
     <Folder Include="View\Images\" />
     <Folder Include="View\Images\about\" />
@@ -81,8 +85,15 @@
     <Compile Include="Model\LevelModel.js" />
     <Compile Include="Model\Scripts\showDbEntry.js" />
     <Compile Include="Model\StudentModel.js" />
+    <Compile Include="Practise\AndelaTechChlg31_ChinekeTobenna\PalindromeScript.js" />
     <Compile Include="Practise\Classes.js" />
-    <Compile Include="Practise\DSA.js" />
+    <Compile Include="Practise\Currying.js" />
+    <Compile Include="Practise\Iterables.js" />
+    <Compile Include="Practise\JQueryModal.js" />
+    <Compile Include="Practise\PostFix.js" />
+    <Compile Include="Practise\Practise.js" />
+    <Compile Include="Practise\VoteExploit.js" />
+    <Compile Include="Practise\Generators.js" />
     <Compile Include="Practise\HackerRank.js" />
     <Compile Include="Practise\LexicalThis.js" />
     <Compile Include="Practise\Oop.js" />
@@ -90,7 +101,6 @@
     <Compile Include="Practise\Promises.js" />
     <Compile Include="Practise\Prototype.js" />
     <Compile Include="Practise\Sorting.js" />
-    <Compile Include="Practise\Testing.js" />
     <Compile Include="View\Scripts\CommonScripts\animate.js" />
     <Compile Include="View\Scripts\CommonScripts\bootstrap.min.js" />
     <Compile Include="View\Scripts\CommonScripts\jquery.flexslider.js" />

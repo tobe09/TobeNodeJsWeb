@@ -1,11 +1,9 @@
 ﻿'use strict'
 
-let arr = [3, 5, 7, 9, 4.7, i1, 23, 45, 32, 9.338, 5.64 6, 5, 7, 8, 1, 29.13 70, 43, 23, 54];
+const arr = [3, 5, 7, 9, 4.7, 11, 23, 5.64, 6, 5, 7, 8, 1, 29.13, 70, 43, 23, 54];
 
 function cloneArr() {
-    let arrClone = [];
-    for (const i of arr) arrClone.push(i);
-    return arrClone;
+    return [...arr];
 }
 
 
@@ -100,7 +98,7 @@ function shellSort(arr) {
         for (outer = interval; outer < max; outer++) {
             newVal = arr[outer];
             inner = outer;
-            while (inner > interval - 1 && arr[inner - interval] >= newVal) {
+            while (inner >= interval && arr[inner - interval] >= newVal) {
                 arr[inner] = arr[inner - interval];
                 inner -= interval;
                 swaps++;
@@ -119,13 +117,9 @@ shellSort(cloneArr());
 
 //QUICK SORT, Hoare and Lamuto partition scheme
 console.log('QUICK SORT');
-// classic implementation (with Hoare or Lomuto partition scheme, you can comment either one method or the other to see the difference)
-function quicksort(array, left, right) {
-    left = left || 0;
-    right = right || array.length - 1;
-
-    // var pivot = partitionLomuto(array, left, right); // you can play with both partition
-    var pivot = partitionHoare(array, left, right); // you can play with both partition
+function quicksort(array, left = 0, right = array.length - 1) {
+    var pivot = partitionLomuto(array, left, right); // you can play with both partition schemes
+    //var pivot = partitionHoare(array, left, right); // you can play with both partition schemes
 
     if (left < pivot - 1) {
         quicksort(array, left, pivot - 1);
@@ -133,6 +127,7 @@ function quicksort(array, left, right) {
     if (right > pivot) {
         quicksort(array, pivot, right);
     }
+
     return array;
 }
 
@@ -146,11 +141,11 @@ function swap(array, i, j) {
 
 // Lomuto partition scheme, it is less efficient than the Hoare partition scheme
 function partitionLomuto(array, left, right) {
-    var pivot = right;
+    //var pivot = right;
     var i = left;
 
     for (var j = left; j < right; j++) {
-        if (array[j] <= array[pivot]) {
+        if (array[j] <= array[right]) {
             swap(array, i, j);
             i = i + 1;
         }
@@ -185,7 +180,7 @@ console.log('BASIC QUICK SORT');
 let arrBasicQuick = cloneArr();
 //let arrBasicQuick = arr.slice();      //same as above
 
-function QuickSortBasic(arr) {
+function quickSortBasic(arr) {
     if (arr.length <= 1) return arr;
 
     const pivot = arr[0];
@@ -201,13 +196,13 @@ function QuickSortBasic(arr) {
         }
     }
 
-    let smallValues = QuickSortBasic(lesser);
-    let bigValues = QuickSortBasic(greater);
+    let smallValues = quickSortBasic(lesser);
+    let bigValues = quickSortBasic(greater);
 
     return smallValues.concat(pivot, bigValues);
 }
 
-console.log(QuickSortBasic(arrBasicQuick));
+console.log(quickSortBasic(arrBasicQuick));
 
 
 //MERGE SORT//
@@ -235,7 +230,9 @@ function mergeTopDown(left, right) {
             array.push(right.shift());
         }
     }
-    return array.concat(left.slice()).concat(right.slice());
+
+    //return array.concat(left.slice()).concat(right.slice());
+    return array.concat(left, right);
 }
 
 console.log(mergeSortTopDown(cloneArr())); // => [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
@@ -277,4 +274,3 @@ function mergeBottomUp(array, left, step) {
 }
 
 console.log(mergeSortBottomUp(cloneArr())); // => [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-

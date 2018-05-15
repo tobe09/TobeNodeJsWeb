@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="PalindromeStyle.css" rel="stylesheet" />
+    <title>Andela Palindrome Checker</title>
+</head>
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col text-center">
+                <h1 class="header-label">PALINDROME CHECKER</h1>
+                <h3><small class="header-info">Verify your palindromes</small></h3>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="col">
+                <p>
+                    A palindrome is a word, phrase, number or sequence of words that reads the same backwards as forwards.
+                    Punctuation and spaces between the words or lettering is allowed.
+                </p>
+                <p>
+                    Read more <a href="https://en.wikipedia.org/wiki/Palindrome" target="_blank">here</a>
+                </p>
+            </div>
+
+            <div class="row examples">
+                <div class="col">
+                    <p>
+                        Examples of palindromes include:
+                    </p>
+                </div>
+                <div class="col col-words">
+                    <div class="example-margin">
+                        <strong> <em>Words</em> </strong>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                Madam
+                            </li>
+                            <li>
+                                Ebube
+                            </li>
+                            <li>
+                                Rotator
+                            </li>
+                            <li>
+                                Wow
+                            </li>
+                            <li>
+                                Refer
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col col-sentences">
+                    <div class="example-margin">
+                        <strong> <em> Sentences</em> </strong>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                Was it a cat I saw?
+                            </li>
+                            <li>
+                                Red rum, sir, is murder
+                            </li>
+                            <li>
+                                Step on no pets
+                            </li>
+                            <li>
+                                No lemon, no melon
+                            </li>
+                            <li>
+                                Eva, can I see bees in a cave?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col input-heading">
+                <p><h3> Enter your word/phrase below to check if it is a palindrome</h3></p>
+            </div>
+            <div class="col span-msg"><span id="spanMsg"></span></div>
+            <div class="col input-label">
+                <span>Enter word/phrase: </span>
+            </div>
+            <div class="col input-text">
+                <input id="txtPalindrome" type="text" placeholder="Enter text" /><br />
+                <span class="btn-submit">
+                    <button id="btnPalindrome">
+                        Check
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="row result-history">
+            <div class="row result-heading input-heading hidden">
+                <div class="col col-histDesc"> <h3>History &nbsp; <small>(maximum number of records: 5)</small></h3></div>
+                <div class="col col-btn-clear">
+                    <button id="btnClear">
+                        Clear all
+                    </button>
+                </div>
+            </div>
+            <div class="row result-info result-header hidden">
+                <span class="result-shape">
+                </span>
+                <div class="col result-value">
+                    Value Entered
+                </div>
+                <div class="col result-statement res-statement-header">
+                    Result
+                </div>
+            </div>
+
+            <div id="divHistory" class="row result-info">
+                <!--<div class="row result-info">
+                    <span class="result-shape bg-success">
+                    </span>
+                    <div class="col result-value">
+                        Madam
+                    </div>
+                    <div class="col result-statement">
+                        Correct Palindrome
+                    </div>
+                </div>-->
+            </div>
+        </div>
+
+        <footer class="row"></footer>
+    </div>
+
+
+    <script src="PalindromeScript.js"></script>
+</body>
+</html>

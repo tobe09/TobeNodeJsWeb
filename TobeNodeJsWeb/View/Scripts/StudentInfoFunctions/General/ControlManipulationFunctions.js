@@ -40,8 +40,7 @@ function getDays(plainListId, spanId, monthVal, yearVal) {
 
 
 //repopulate day of birth select list
-function repopulateDob(daySpanId, plainDayListId, monthListId, yearListId) {
-    
+function repopulateDob(daySpanId, plainDayListId, monthListId, yearListId) {    
     //get the previously selected day
     var previousDay = $('#' + plainDayListId).val();                             //reset the selected day
     

@@ -53,7 +53,7 @@ class Animal {
     }
 }
 Animal.prototype.shout = function () { console.log("shouting"); }
-
+new Array().so
 class Dog extends Animal {
     constructor(name, age) {
         super(name); 

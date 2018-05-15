@@ -140,7 +140,51 @@ const DataStructures = {
             }
 
             equalStacks();
+        },
+        gameOfTwoStacks: function () {
+            //sum of values in the gotten from stack must be less than x, get max number of pops
+            var n = 5;
+            var m = 4;
+            var x = 10;
+            let a = [4, 2, 4, 6, 1];
+            let b = [2, 1, 8, 5];
+            // your code goes here
+            let sum = 0, count = 0;
+            let c = [];
+            while (sum < x && count < n) {
+                const val = a.shift();
+                sum += val;
+                c.push(val);
+                count++;
+            }
+            count = 0;
         }
+    }
+}
+
+const Algorithms = {
+    MigratoryBirds: function () {
+        const birds = [1, 2, 4, 4, 4, 5];
+        let sightings = new Object();
+
+        birds.forEach(bird => {
+            if (sightings.hasOwnProperty(bird)) {
+                sightings[bird] += 1;
+            }
+            else {
+                sightings[bird] = 0;
+            }
+        });
+
+        let max = 0, maxId;
+        for (let birdId in sightings) {
+            if (sightings[birdId] > max) {
+                max = sightings[birdId];
+                maxId = birdId;
+            }
+        }
+
+        return maxId;
     }
 }
 
@@ -213,6 +257,110 @@ const Others = {
         const c = eval(parseInt(a, 2) + "*" + parseInt(b, 2));
         console.log(c);
         console.log(c.toString(2));
+    },
+    arrayIterator: function () {
+        let arr = [1, 2, 3, 4, 5];
+        let inA = [], ofA = [], eachA = [], indexValA = [];
+        for (let i in arr) {        //i is a string denoting each index
+            inA.push(i);
+            indexValA.push(arr[i]);
+        }
+        for (let i of arr) {
+            ofA.push(i);            //i is the actual value
+        }
+        for (let i = 0; i < arr.length; i++) {
+            eachA.push(i);          //i is an integer for each index
+        }
+        console.log('inA: ' + inA);
+        console.log('indexValA: ' + indexValA);
+        console.log('ofA: ' + ofA);
+        console.log('eachA: ' + eachA);
+    },
+    fibonacciGen () {
+        function fibonacci5() {
+            let cur = 0, next = 1;
+
+            this.Symbol.Iterator = {        //not Symbol.iterator
+                next: function () {
+                    const temp = cur;
+                    cur = next;
+                    next += temp;
+                    return { done: false, value: temp };
+                }
+            }
+
+            return this.Symbol.Iterator;
+        }
+
+        function* fibonacci6() {
+            let cur = 0, next = 1;
+
+            for (; ;) {     //while(true)
+                const temp = cur;
+                cur = next;
+                next += temp;
+                yield temp;
+            }
+        }
+
+        function generateEs5() {
+            const iter = fibonacci5();      //also works for fibonacci6
+            let next = iter.next();
+
+            while (!next.done) {
+                const val = next.value;
+                if (val > 100) {
+                    break;
+                }
+
+                console.log(val);
+                next = iter.next();
+            }
+        }
+
+        function generateEs6() {
+            for (var val of fibonacci6()) {
+                if (val > 100) {
+                    break;
+                }
+
+                console.log(val);
+            }
+        }
+
+        //generateEs5();
+        generateEs6();
+    },
+    es6Obj () {
+        let parent = new Object();
+        parent.a = 'a';
+        let child = new Object();
+        child.constructor.prototype = parent;
+        console.log(child.a);
+    },
+    symbol() {
+        let sym1 = Symbol('sym');
+        let sym2 = Symbol('sym');
+        console.log(sym1);
+        console.log(sym2);
+        console.log(sym1 == sym2);
+        console.log(sym1 === sym2);
+    },
+    weakMap() {
+        const map1 = new WeakMap();
+        map1.set(this, 'privateProperties');
+        const zero = map1.get(this);
+        console.log(zero);
+    },
+    weakSet() {
+        const set1 = new WeakSet();
+        const obj = { key: 'value' }
+        set1.add(obj);
+        const two = new Object(2);
+        set1.add(two);
+        console.log(set1.has(obj));
+        console.log(set1.has(two));
+        console.log(set1.has(2));
     }
 }
 
@@ -227,8 +375,16 @@ const HackerRank = {
         //Others.binCalc();
         //Others.OrAssignment();
         //Others.TestCalc();
-        DataStructures.stacks.equalStacks();
+        //DataStructures.stacks.equalStacks();
+        //Others.arrayIterator();
+        //Others.symbol();
+        //Others.weakMap();
+        //Others.weakSet()
+        //Others.fibonacciGen();
+
+        ////Others.es6Obj();
     }
 }
 
 HackerRank.Run();
+

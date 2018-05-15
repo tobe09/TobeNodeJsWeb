@@ -11,7 +11,6 @@ function getAllStudents(callBackMethodName) {
             callBackDispatcher(callBackMethodName);
         }
     })
-    
 }
 
 
@@ -30,7 +29,6 @@ function getOneStudent(query, callBackMethodName) {
     })
     
 }
-
 
 //function to add a student to database
 function addStudent(studentInfo, callBackMethodName){
@@ -135,7 +133,4 @@ function getAgeRange(){
 
     return ageRange;
 }
-
-
-
 
