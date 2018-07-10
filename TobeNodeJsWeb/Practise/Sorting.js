@@ -23,7 +23,7 @@ function bubbleSort(arr) {
             }
         }
         if (!swapped) break;
-    }
+    } 
 
     console.log(arr);
     console.log(swaps);
@@ -59,7 +59,7 @@ function insertionSort(arr) {
 
 insertionSort(cloneArr());
 
-
+''.subs
 //SELECTION SORT
 console.log('SELECTION SORT');
 function selectionSort(arr) {
@@ -210,7 +210,7 @@ console.log('MERGE SORT');
 
 // top-down implementation
 function mergeSortTopDown(array) {
-    if (array.length < 2) {
+    if (array.length <= 1) {
         return array;
     }
 
@@ -274,3 +274,5 @@ function mergeBottomUp(array, left, step) {
 }
 
 console.log(mergeSortBottomUp(cloneArr())); // => [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+
+

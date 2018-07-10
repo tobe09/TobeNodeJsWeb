@@ -94,8 +94,16 @@ router.route("/Students")
     .sort({ LastName: 1, FirstName: 1 });
 })
 
+//test es6 OOP
+class Error {
+    constructor(errMsg) {
+        this.Error = errMsg;
+    }
+}
+
 //add student to the database using post
 .post(function (req, res) {
+    //res.json(new Error("WTF"));
     var newStudent = req.body;
     var isValidStudnt = isValidStudent(newStudent);
     
@@ -171,8 +179,6 @@ router.route("/Students")
         res.json({ Error: isValidStudnt.message });
     }
 });
-
-
 
 router.route("/Students/:Id")
 

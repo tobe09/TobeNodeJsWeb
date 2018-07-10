@@ -127,7 +127,7 @@ function addStudentLinkClick() {
 
 //callback function for added student
 function addStudentCallBack(result) {
-    
+    debugger
     if (result != null && typeof (result.Error) == "undefined") {
         //hide and show necessary divs
         makeVisible("#divResultAdd");
